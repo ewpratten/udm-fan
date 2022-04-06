@@ -4,13 +4,13 @@ use clap::{Parser, Subcommand};
 #[clap(author, version, about, long_about = None)]
 pub struct Args {
     #[clap(subcommand)]
-    command: Commands,
+    pub command: Commands,
     #[clap(long)]
-    override_ip: Option<String>,
+    pub override_ip: Option<String>,
 }
 
 #[derive(Subcommand)]
-enum Commands {
+pub enum Commands {
     /// Switches the device fans into automatic control
     Auto,
     /// Manually set the fan speed byte
