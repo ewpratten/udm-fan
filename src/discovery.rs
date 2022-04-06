@@ -11,6 +11,12 @@ pub enum NetDiscoveryError {
     HttpError(#[from] reqwest::Error),
 }
 
+/// Attempt to discover a UDM-Pro on one of the host's network interfaces.
+///
+/// # Discovery Process
+///
+/// This works by checking all interfaces for gateways then making HTTPS requests 
+/// at them and seeing if a UniFi OS control panel is hit.
 pub async fn discover_udm_pro() -> Result<Option<Ipv4Addr>, NetDiscoveryError> {
     // We need to keep track of a regex pattern for HTML response validation
     let html_title_re = Regex::new(r"<title>UniFi OS</title>").unwrap();
