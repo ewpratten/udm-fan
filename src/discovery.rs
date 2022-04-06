@@ -13,7 +13,7 @@ pub enum NetDiscoveryError {
 
 /// Attempt to discover a UDM-Pro on one of the host's network interfaces.
 ///
-/// # Discovery Process
+/// ## Discovery Process
 ///
 /// This works by checking all interfaces for gateways then making HTTPS requests 
 /// at them and seeing if a UniFi OS control panel is hit.

@@ -5,6 +5,7 @@ use colored::Colorize;
 
 mod cli;
 mod discovery;
+mod password;
 
 #[tokio::main]
 pub async fn main() {
@@ -26,7 +27,14 @@ pub async fn main() {
         );
         std::process::exit(1);
     }
+    let udm_address = udm_address.unwrap();
 
     // Print the UDM-PRO's IP address
-    println!("Using {} to reach UDM-Pro", udm_address.unwrap().to_string().cyan());
+    println!("Using {} to reach UDM-Pro", udm_address.to_string().cyan());
+
+    // Get the SSH password
+    let ssh_password = match args.ssh_password {
+        Some(p) => p,
+        None => password::get_udm_password(udm_address).to_string(),
+    };
 }

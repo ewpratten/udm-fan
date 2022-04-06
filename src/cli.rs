@@ -5,8 +5,14 @@ use clap::{Parser, Subcommand};
 pub struct Args {
     #[clap(subcommand)]
     pub command: Commands,
+
+    /// Override the search mechanism with a custom device IP
     #[clap(long)]
     pub override_ip: Option<String>,
+
+    /// An SSH password override
+    #[clap(long)]
+    pub ssh_password: Option<String>,
 }
 
 #[derive(Subcommand)]
