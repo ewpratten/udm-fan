@@ -1,17 +1,21 @@
 [package]
-name = "<crate_name>"
+name = "udm-fan"
 version = "0.1.0"
 authors = ["Evan Pratten <ewpratten@gmail.com>"]
 edition = "2021"
-description = "<description>"
-documentation = "https://docs.rs/<crate_name>"
+description = "A utility for interacting with the fans on a UDM-Pro over the network"
+documentation = "https://docs.rs/udm-fan"
 readme = "README.md"
-homepage = "https://github.com/ewpratten/<repo_name>"
-repository = "https://github.com/ewpratten/<repo_name>"
+homepage = "https://github.com/ewpratten/udm-fan"
+repository = "https://github.com/ewpratten/udm-fan"
 license = "GPL-3.0"
 keywords = []
 categories = []
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+clap = { version = "3.1.8", features = ["derive", "color", "suggestions"] }
+ssh2 = "0.9.3"
+colored = "2.0.0"
+rpassword = "6.0"
+netrc-rs = "0.1.2"
