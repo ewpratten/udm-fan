@@ -17,7 +17,7 @@ categories = []
 clap = { version = "3.1.8", features = ["derive", "color", "suggestions"] }
 ssh2 = "0.9.3"
 colored = "2.0.0"
-rpassword = "6.0"
+rpassword = "7.2"
 netrc-rs = "0.1.2"
 # local-ip-address = "0.4.4"
 pnet = "0.29.0"
